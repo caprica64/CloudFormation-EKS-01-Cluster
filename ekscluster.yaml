@@ -202,8 +202,6 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}::VPC'
   EKSClusterName:
-    Value: !GetAtt
-      - ControlPlane
-      - Name
+    Value: !Ref ControlPlane
     Export:
       Name: !Sub '${AWS::StackName}::ControlPlane'
