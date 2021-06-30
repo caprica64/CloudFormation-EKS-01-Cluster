@@ -199,6 +199,7 @@ Outputs:
       Name: !Sub '${AWS::StackName}::SubnetsPublic'
   VPC:
     #Value: vpc-0f1e1e7087873e912
-    Value: !Ref VpcId
+    Value: !GetAtt
+      - VpcId
     Export:
       Name: !Sub '${AWS::StackName}::VPC'
