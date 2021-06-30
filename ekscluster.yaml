@@ -201,3 +201,9 @@ Outputs:
     Value: vpc-0f1e1e7087873e912
     Export:
       Name: !Sub '${AWS::StackName}::VPC'
+  EKSClusterName:
+    Value: !GetAtt
+      - ControlPlane
+      - Name
+    Export:
+      Name: !Sub '${AWS::StackName}::ControlPlane'
