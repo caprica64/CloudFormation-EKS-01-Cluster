@@ -4,7 +4,7 @@ Description: >-
   by eksctl]
 Parameters:
   NetworkStackName:
-    Default: "Stack-00-VPC"
+    Default: "EKS-00-Network"
     Type: String
          
 Mappings:
