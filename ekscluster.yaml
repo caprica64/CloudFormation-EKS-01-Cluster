@@ -198,7 +198,8 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}::SubnetsPublic'
   VPC:
-    #Value: vpc-0f1e1e7087873e912
+    Value: !ImportValue
+      "Fn::Sub": "${NetworkStackName}-VPC"
     Export:
       Name: !Sub '${AWS::StackName}::VPC'
   EKSClusterName:
