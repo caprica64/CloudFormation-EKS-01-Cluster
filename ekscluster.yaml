@@ -184,7 +184,8 @@ Outputs:
   SubnetsPrivate:
     Value: !Join 
       - ','
-      - - !ImportValue '${AWS::NetworkStackName}-SubnetAPrivate'
+      - - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetAPublic"
         - subnet-02507525d5f96dd1b
         - subnet-0d538db7901902f40
     Export:
