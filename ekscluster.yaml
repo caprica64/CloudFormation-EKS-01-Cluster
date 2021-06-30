@@ -185,17 +185,22 @@ Outputs:
     Value: !Join 
       - ','
       - - !ImportValue
-              "Fn::Sub": "${NetworkStackName}-SubnetAPublic"
-        - subnet-02507525d5f96dd1b
-        - subnet-0d538db7901902f40
+              "Fn::Sub": "${NetworkStackName}-SubnetAPrivate"
+        - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetBPrivate"
+        - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetCPrivate"
     Export:
       Name: !Sub '${AWS::StackName}::SubnetsPrivate'
   SubnetsPublic:
     Value: !Join 
       - ','
-      - - subnet-0651fd371912c23f9
-        - subnet-0774145cb73a0ec28
-        - subnet-042b1af2a9dc08651
+      - - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetAPublic"
+        - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetBPublic"
+        - !ImportValue
+              "Fn::Sub": "${NetworkStackName}-SubnetCPublic"
     Export:
       Name: !Sub '${AWS::StackName}::SubnetsPublic'
   VPC:
