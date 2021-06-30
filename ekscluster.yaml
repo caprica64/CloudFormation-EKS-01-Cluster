@@ -201,5 +201,6 @@ Outputs:
     #Value: vpc-0f1e1e7087873e912
     Value: !GetAtt
       - VpcId
+      - Id
     Export:
       Name: !Sub '${AWS::StackName}::VPC'
